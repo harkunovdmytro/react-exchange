@@ -3,8 +3,8 @@ import {useState} from "react";
 const Exchange = ({rates}) => {
     const [currency1, setCurrency1] = useState('UAH')
     const [currency2, setCurrency2] = useState('USD')
-    const [amount1, setAmount1] = useState(1)
-    const [amount2, setAmount2] = useState(1)
+    const [amount1, setAmount1] = useState(0)
+    const [amount2, setAmount2] = useState(0)
 
     function handleChangeAmount1(e) {
         setAmount1(()=>(+e.target.value));
@@ -30,7 +30,8 @@ const Exchange = ({rates}) => {
         <div className=' min-h-full m-auto'>
             <div className='mb-10 flex'>
                 <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    min="0"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-sky-400 focus:shadow-outline"
                     type="number" value={amount1} onChange={(e) => handleChangeAmount1(e)}/>
                 <div className="inline-block relative w-40">
                     <select
@@ -51,7 +52,8 @@ const Exchange = ({rates}) => {
             </div>
             <div className='flex'>
                 <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    min="0"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-sky-400 focus:shadow-outline"
                     type="number" value={amount2} onInput={(e) => handleChangeAmount2(e)}/>
                 <div className="inline-block relative w-40">
                     <select
